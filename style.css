@@ -426,6 +426,16 @@ p {
     color: var(--primary);
 }
 
+/* Line breaks for journey text */
+.about-card p[data-i18n="about-journey-text"] .line {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.about-card p[data-i18n="about-journey-text"] .line:last-child {
+    margin-bottom: 0;
+}
+
 /* Projects Section */
 .projects {
     padding: 100px 0;

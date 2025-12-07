@@ -16,22 +16,26 @@ const translations = {
         // Hero Section
         'hero-badge': 'PROJECT MANAGER',
         'hero-title': 'Turning Vision Into Value',
-        'hero-subtitle': 'Building digital ecosystems that empower teams, optimize spaces, and create meaningful impact through technology.',
+        'hero-subtitle': 'Building digital products that increase productivity, optimize spaces, and create meaningful impact through technology.',
         'hero-experience': 'Years of Experience',
         'hero-mvp': 'Months to MVP',
-        'hero-projects': 'Projects Managed',
         'hero-cta1': 'Explore Opportunities',
         'hero-cta2': 'View Projects',
         
         // About Section
         'about-title': 'About Me',
-        'about-philosophy': 'My Philosophy',
-        'about-philosophy-text': 'I believe in building products that solve real problems. My approach combines strategic thinking with hands-on execution, ensuring that every feature delivers value to both users and business.',
+        'about-philosophy': 'Personality',
+        'about-philosophy-text': 'Education: Moscow State University, Faculty of Political Science (2023); Age: 24.',
         'about-journey': 'My Journey',
-        'about-journey-text': 'From assistant to project manager to HR manager - I\'ve experienced business from multiple angles. This diverse background helps me understand stakeholder needs and bridge gaps between teams.',
+        'about-journey-text': [
+            'Anima Technologies LLC',
+            'August - October 2023 - Assistant to the General Director;',
+            'October 2023 - June 2024 - HR and Scrum Master;',
+            'June 2024 - Present - Project Manager.'
+        ],
         'about-seek': 'What I Seek',
-        'about-seek-text': 'Looking for opportunities in Serbia where I can contribute to innovative projects, work with passionate teams, and help build products that make a difference.',
-        'about-quote': '"Seeking to join a dream team of skilled professionals to build impactful products that simplify processes and improve lives."',
+        'about-seek-text': 'Looking for opportunities where I can contribute to innovative projects, work with professional teams, and help build products that make a difference.',
+        'about-quote': 'Seeking to join a dream team of skilled professionals to build impactful products that simplify processes and improve lives',
         'about-quote-author': '— From my resume',
         
         // Projects Section
@@ -136,7 +140,7 @@ const translations = {
         // Hero Section
         'hero-badge': 'ПРОЕКТНЫЙ МЕНЕДЖЕР',
         'hero-title': 'Превращаю Видение В Ценность',
-        'hero-subtitle': 'Создаю цифровые экосистемы, которые расширяют возможности команд, оптимизируют пространства и создают значимое влияние через технологии.',
+        'hero-subtitle': 'Создаю цифровые продукты, которые повышают продуктивность, оптимизируют пространства и создают значимое влияние через технологии.',
         'hero-experience': 'Лет опыта',
         'hero-mvp': 'Месяцев до MVP',
         'hero-projects': 'Управляемых проектов',
@@ -145,13 +149,18 @@ const translations = {
         
         // About Section
         'about-title': 'Обо мне',
-        'about-philosophy': 'Моя философия',
-        'about-philosophy-text': 'Я верю в создание продуктов, решающих реальные проблемы. Мой подход сочетает стратегическое мышление с практической реализацией, гарантируя, что каждая функция приносит ценность как пользователям, так и бизнесу.',
+        'about-philosophy': 'Персональная информация',
+        'about-philosophy-text': 'Образование - Московский государственный университет, факультет политологии (2023); Возраст - 24 года.',
         'about-journey': 'Мой путь',
-        'about-journey-text': 'От помощника до проектного менеджера и HR-менеджера - я изучила бизнес с разных сторон. Этот разнообразный опыт помогает мне понимать потребности стейкхолдеров и устранять разрывы между командами.',
+        'about-journey-text': [
+            'Anima Technologies LLC',
+            'Август - октябрь 2023 - Ассистент генерального директора;',
+            'Октябрь 2023 - июнь 2024 - HR и Scrum-мастер;',
+            'Июнь 2024 - настоящее время - Менеджер проекта.'
+        ],
         'about-seek': 'Что я ищу',
-        'about-seek-text': 'Ищу возможности в Сербии, где могу внести вклад в инновационные проекты, работать со страстными командами и помогать создавать продукты, которые имеют значение.',
-        'about-quote': '"Ищу команду мечты из опытных профессионалов для создания значимых продуктов, которые упрощают процессы и улучшают жизнь."',
+        'about-seek-text': 'Ищу возможности внести вклад в инновационные проекты, работать с профессиональными командами, помогать создавать продукты, которые имеют значение.',
+        'about-quote': 'Ищу команду мечты из опытных профессионалов для создания значимых продуктов, которые упрощают процессы и улучшают жизнь',
         'about-quote-author': '— Из моего резюме',
         
         // Projects Section
@@ -276,6 +285,21 @@ function applyLanguage(lang) {
                 } else {
                     element.innerHTML = translation.replace('Into Value', '<span class="highlight">Into Value</span>');
                 }
+            } else if (key === 'about-journey-text') {
+                // Special handling for journey text with line breaks
+                element.textContent = ''; // Clear existing content
+                if (Array.isArray(translation)) {
+                    // Create span elements for each line
+                    translation.forEach(lineText => {
+                        const span = document.createElement('span');
+                        span.className = 'line';
+                        span.textContent = lineText;
+                        element.appendChild(span);
+                    });
+                } else {
+                    // Fallback to innerHTML if it's a string
+                    element.innerHTML = translation;
+                }
             } else {
                 // Check if translation contains HTML
                 if (translation.includes('<strong>') || translation.includes('<span>')) {
@@ -327,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Calculate years of experience dynamically
 function calculateExperience() {
-    const startDate = new Date('2024-08-01');
+    const startDate = new Date('2024-06-01');
     const now = new Date();
     const months = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
     const years = months / 12;
