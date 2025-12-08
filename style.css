@@ -1003,20 +1003,6 @@ p {
     color: var(--primary);
 }
 
-.btn-download {
-    padding: 8px 16px;
-    background-color: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.btn-download:hover {
-    background-color: var(--primary-light);
-}
-
 .footer-note {
     font-size: 0.875rem;
     color: var(--text-light);

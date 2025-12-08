@@ -99,7 +99,7 @@ const translations = {
         'mood-link1': 'Exhibition article',
         
         // Skills Section
-        'skills-title': 'PM Toolkit & Skills',
+        'skills-title': 'My Toolkit & Skills',
         'skills-subtitle': 'Combination of technical expertise and a deep understanding of user experience',
         'skills-methodologies': 'Methodologies',
         'skills-tools': 'Tools & Technologies',
@@ -141,7 +141,6 @@ const translations = {
         
         // Footer
         'footer-tagline': 'Project Manager | Turning Vision Into Value',
-        'footer-download': 'Download CV',
         'footer-note': 'Resume updated: December 2025 | Website built with HTML, CSS & JavaScript'
     },
     ru: {
@@ -281,7 +280,6 @@ const translations = {
         
         // Footer
         'footer-tagline': 'Проектный менеджер | Превращаю видение в ценность',
-        'footer-download': 'Скачать резюме',
         'footer-note': 'Резюме обновлено: декабрь 2025 | Сайт построен на HTML, CSS & JavaScript'
     }
 };
