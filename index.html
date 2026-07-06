@@ -1,156 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" data-density="spacious">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ksenia Kurilova | Project Manager</title>
+    <link rel="stylesheet" href="https://unpkg.com/litura@0.3.1-alpha/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Ksenia Kurilova</a>
-            <div class="nav-links">
-                <a href="#about" data-i18n="nav-about">About</a>
-                <a href="#projects" data-i18n="nav-projects">Projects</a>
-                <a href="#skills" data-i18n="nav-skills">Skills</a>
-                <a href="#contact" data-i18n="nav-contact">Contact</a>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a href="#" class="site-header__brand">Ksenia Kurilova</a>
+            <div class="site-header__actions">
+                <button type="button" class="btn btn--ghost nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav site-nav" id="siteNav" aria-label="Main navigation">
+                    <div class="nav__item">
+                        <a class="nav__link" href="#about" data-i18n="nav-about">About</a>
+                    </div>
+                    <div class="nav__item">
+                        <a class="nav__link" href="#projects" data-i18n="nav-projects">Projects</a>
+                    </div>
+                    <div class="nav__item">
+                        <a class="nav__link" href="#skills" data-i18n="nav-skills">Skills</a>
+                    </div>
+                    <div class="nav__item">
+                        <a class="nav__link" href="#contact" data-i18n="nav-contact">Contact</a>
+                    </div>
+                </nav>
+                <button type="button" class="btn btn--ghost" id="languageToggle" aria-label="Switch language">
+                    <span class="language-text">EN</span>
+                    <i class="fas fa-globe"></i>
+                </button>
             </div>
-            <button class="language-toggle" id="languageToggle">
-                <span class="language-text">EN</span>
-                <i class="fas fa-globe"></i>
-            </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="badge" data-i18n="hero-badge">PROJECT MANAGER</div>
-                <h1 data-i18n="hero-title">Turning Vision Into Value</h1>
-                <p class="hero-subtitle" data-i18n="hero-subtitle">Building digital products that empower teams, optimize spaces, and create meaningful impact through technology.</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number" id="experienceYears">1.5</span>
-                        <span class="stat-label" data-i18n="hero-experience">Years of Experience</span>
+    <main>
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container hero-layout">
+                <div class="hero-layout__content">
+                    <span class="label label--pill" data-i18n="hero-badge">PROJECT MANAGER</span>
+                    <h1 data-i18n="hero-title">Turning Vision Into Value</h1>
+                    <p class="hero-layout__subtitle text-muted" data-i18n="hero-subtitle">Building digital products that increase productivity, optimize spaces, and create meaningful impact through technology.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="experienceYears">1.5</div>
+                            <span class="text-muted" data-i18n="hero-experience">Years of Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="7">0</div>
+                            <span class="text-muted" data-i18n="hero-mvp">Months to MVP</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="7">0</span>
-                        <span class="stat-label" data-i18n="hero-mvp">Months to MVP</span>
+                    <div class="hero-layout__actions">
+                        <a href="#contact" class="btn" data-i18n="hero-cta1">Explore Opportunities</a>
+                        <a href="#projects" class="btn btn--ghost" data-i18n="hero-cta2"><span>View Projects</span> <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-primary" data-i18n="hero-cta1">Explore Opportunities</a>
-                    <a href="#projects" class="btn-secondary" data-i18n="hero-cta2"><span>View Projects</span> <i class="fas fa-arrow-right"></i></a>
+                <div class="hero-layout__visual">
+                    <div class="profile-photo-wrap">
+                        <img src="me.img.jpg" alt="Ksenia Kurilova">
+                    </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="photo-section">
-                    <div class="photo-frame">
-                        <img src="me.img.jpg" alt="Ksenia Kurilova" class="profile-photo">
-                        <div class="photo-placeholder">
-                            <div class="photo-overlay">
-                                <i class="fas fa-user"></i>
-                                <span>Your Photo Here</span>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section-block section-block--alt">
+            <div class="container">
+                <h2 class="section-heading" data-i18n="about-title">About Me</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 data-i18n="about-philosophy">Personality</h3>
+                        <p data-i18n="about-philosophy-text">Education: Moscow State University, Faculty of Political Science (2023); Age: 24.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h3 data-i18n="about-journey">My Journey</h3>
+                        <p data-i18n="about-journey-text">
+                            <span class="line">Anima Technologies LLC</span>
+                            <span class="line">August - October 2023 - Assistant to the General Director;</span>
+                            <span class="line">October 2023 - June 2024 - HR and Scrum Master;</span>
+                            <span class="line">June 2024 - Present - Project Manager.</span>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-search"></i></div>
+                        <h3 data-i18n="about-seek">What I Seek</h3>
+                        <p data-i18n="about-seek-text">Looking for opportunities where I can contribute to innovative projects, work with professional teams, and help build products that make a difference.</p>
+                    </div>
+                </div>
+                <div class="card card--accented about-quote">
+                    <p data-i18n="about-quote">Seeking to join a dream team of skilled professionals to build impactful products that simplify processes and improve lives</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section-block">
+            <div class="container">
+                <h2 class="section-heading" data-i18n="projects-title">Project Portfolio</h2>
+                <p class="section-lead" data-i18n="projects-subtitle">From innovative micro-products to enterprise ecosystems</p>
+
+                <!-- Anima -->
+                <article class="card card--fluid project-card">
+                    <div class="card__body">
+                        <div class="project-card__tags">
+                            <span class="badge">Enterprise SaaS</span>
+                            <span class="badge">Microservices</span>
+                            <span class="badge">System Integration</span>
+                            <span class="badge">On-Premise</span>
+                        </div>
+                        <h3 data-i18n="anima-title">Anima: Smart Office Ecosystem Platform</h3>
+                        <p data-i18n="anima-description">A comprehensive microservices-based SaaS and On-premise platform transforming hybrid work environments through intelligent space management, real-time analytics, and automation.</p>
+
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-microchip"></i>
+                                <span data-i18n="anima-feature1">Microservices Architecture</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-layer-group"></i>
+                                <span data-i18n="anima-feature2">Multi-module System</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-cloud"></i>
+                                <span data-i18n="anima-feature3">SaaS & On-Premise</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 data-i18n="about-philosophy">Personality</h3>
-                    <p data-i18n="about-philosophy-text">Education: Moscow State University, Faculty of Political Science (2023); Age: 24.</p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 data-i18n="about-journey">My Journey</h3>
-                    <p data-i18n="about-journey-text">
-                        <span class="line">Anima Technologies LLC</span>
-                        <span class="line">August - October 2023 - Assistant to the General Director;</span>
-                        <span class="line">October 2023 - June 2024 - HR and Scrum Master;</span>
-                        <span class="line">June 2024 - Present - Project Manager.</span>
-                    </p>
-                </div>
-                <div class="about-card">
-                    <div class="card-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 data-i18n="about-seek">What I Seek</h3>
-                    <p data-i18n="about-seek-text">Looking for opportunities where I can contribute to innovative projects, work with passionate teams, and help build products that make a difference.</p>
-                </div>
-            </div>
-            <div class="quote">
-                <p data-i18n="about-quote">Seeking to join a dream team of skilled professionals to build impactful products that simplify processes and improve lives.</p>
-            </div>
-        </div>
-    </section>
+                        <p class="project-note" data-i18n="anima-components"><strong>Platform Components:</strong> Booking system • Service Desk • Social modules • Engineering systems control • Multimedia management • Mobile applications (iOS/Android) • Web app • Admin panel</p>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-i18n="projects-title">Project Portfolio</h2>
-            <p class="section-subtitle" data-i18n="projects-subtitle">From innovative micro-products to enterprise ecosystems</p>
-            
-            <!-- Project 1: Anima -->
-            <div class="project-card anima-project">
-                <div class="project-tags">
-                    <span class="tag tag-enterprise">Enterprise SaaS</span>
-                    <span class="tag tag-architecture">Microservices</span>
-                    <span class="tag tag-integration">System Integration</span>
-                    <span class="tag tag-deployment">On-Premise</span>
-                </div>
-                <div class="project-content">
-                    <h3 data-i18n="anima-title">Anima: Smart Office Ecosystem Platform</h3>
-                    <p class="project-description" data-i18n="anima-description">A comprehensive microservices-based SaaS platform transforming hybrid work environments through intelligent space management, real-time analytics, and automation.</p>
-                    
-                    <div class="project-features">
-                        <div class="feature">
-                            <i class="fas fa-microchip"></i>
-                            <span data-i18n="anima-feature1">Microservices Architecture</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-layer-group"></i>
-                            <span data-i18n="anima-feature2">Multi-module System</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-cloud"></i>
-                            <span data-i18n="anima-feature3">SaaS & On-Premise</span>
-                        </div>
-                    </div>
-                    
-                    <p class="project-note" data-i18n="anima-components"><strong>Platform Components:</strong> Booking system • Service Desk • Social modules • Engineering systems control • Multimedia management • Mobile applications (iOS/Android) • Web portal • Admin panel</p>
-                    
-                    <div class="project-tabs">
-                        <div class="tab-buttons">
-                            <button class="tab-btn active" data-tab="challenge" data-i18n="anima-challenge">Challenge</button>
-                            <button class="tab-btn" data-tab="role" data-i18n="anima-role">My Role</button>
-                            <button class="tab-btn" data-tab="outcome" data-i18n="anima-outcome">Outcome</button>
-                        </div>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="challenge">
+                        <div class="tabs tabs--pills" role="tablist" aria-label="Anima project details">
+                            <div class="tabs__list">
+                                <input type="radio" name="anima-tabs" id="t1" class="tabs__input" checked>
+                                <label for="t1" class="tabs__tab" role="tab" data-i18n="anima-challenge">Challenge</label>
+                                <input type="radio" name="anima-tabs" id="t2" class="tabs__input">
+                                <label for="t2" class="tabs__tab" role="tab" data-i18n="anima-role">My Role</label>
+                                <input type="radio" name="anima-tabs" id="t3" class="tabs__input">
+                                <label for="t3" class="tabs__tab" role="tab" data-i18n="anima-outcome">Outcome</label>
+                            </div>
+                            <div class="tabs__panel" data-for="t1" role="tabpanel">
                                 <p data-i18n="anima-challenge-text">To develop an enterprise-grade platform that optimizes office space utilization for hybrid work models, integrating multiple building systems and providing data-driven insights for large corporations.</p>
                                 <ul>
                                     <li data-i18n="anima-challenge1">40%+ daily office space vacancy reduction challenge</li>
@@ -159,7 +154,7 @@
                                     <li data-i18n="anima-challenge4">SaaS and On-Premise deployment options</li>
                                 </ul>
                             </div>
-                            <div class="tab-pane" id="role">
+                            <div class="tabs__panel" data-for="t2" role="tabpanel">
                                 <p data-i18n="anima-role-title"><strong>My Role:</strong> Project Manager | Scrum Master</p>
                                 <ul>
                                     <li data-i18n="anima-role1"><strong>End-to-end project leadership</strong> from concept to deployment</li>
@@ -168,274 +163,254 @@
                                     <li data-i18n="anima-role4"><strong>Agile/Scrum implementation</strong> with Jira/Bitrix24</li>
                                     <li data-i18n="anima-role5"><strong>Technical specification development</strong> for web/mobile apps</li>
                                     <li data-i18n="anima-role6"><strong>UX/UI testing</strong> and customer journey optimization</li>
-                                    <li data-i18n="anima-role7"><strong>Integration coordination</strong> with corporate systems (Bitrix24, Kontur, etc.)</li>
+                                    <li data-i18n="anima-role7"><strong>Integration coordination</strong> with corporate systems (Bitrix24, Active Directory, Microsoft Exchange, etc.)</li>
                                     <li data-i18n="anima-role8"><strong>Pre-sales activities:</strong> demos, negotiations, contract preparation</li>
-                                    <li data-i18n="anima-role9"><strong>Product monetization strategy</strong> and financial modeling</li>
+                                    <li data-i18n="anima-role9"><strong>Create product monetization strategy</strong> and financial modeling</li>
                                     <li data-i18n="anima-role10"><strong>Compliance:</strong> Russian software registry & patent applications</li>
                                 </ul>
                             </div>
-                            <div class="tab-pane" id="outcome">
+                            <div class="tabs__panel" data-for="t3" role="tabpanel">
                                 <p data-i18n="anima-outcome-text">Successfully launched an award-winning enterprise solution:</p>
                                 <ul>
                                     <li data-i18n="anima-outcome1">Achieved MVP in 7 months under tight deadlines</li>
-                                    <li data-i18n="anima-outcome2">Secured Skolkovo residency and domestic software registry inclusion</li>
+                                    <li data-i18n="anima-outcome2">Inclusion of software in the register of Russia software, which allowed for the receipt of benefits and grants</li>
                                     <li data-i18n="anima-outcome3">Closed enterprise sales to major commercial companies</li>
-                                    <li data-i18n="anima-outcome4">Built and scaled core team from 0 to 5 key specialists</li>
+                                    <li data-i18n="anima-outcome4">Built and scaled core team from 1 to 5 key specialists</li>
                                     <li data-i18n="anima-outcome5">Developed monetization strategy and financial models</li>
-                                    <li data-i18n="anima-outcome6">Registered software with Rospatent for IP protection</li>
+                                    <li data-i18n="anima-outcome6">Implemented Agile methodologies (Scrum/Kanban), transforming the development process into a flexible cycle</li>
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-stack__label" data-i18n="anima-tech">Tech Stack:</span>
+                            <span class="badge">Python/Django</span>
+                            <span class="badge">React/Next.js</span>
+                            <span class="badge">React Native</span>
+                            <span class="badge">MQTT</span>
+                            <span class="badge">Docker</span>
+                            <span class="badge">PostgreSQL</span>
+                        </div>
+
+                        <p>
+                            <a href="https://animatech.group/ekosistema-umnogo-ofisa-anima/" target="_blank" rel="noopener noreferrer" class="btn btn--soft">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-i18n="anima-link1">View Product Website</span>
+                            </a>
+                        </p>
                     </div>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-label" data-i18n="anima-tech">Tech Stack:</span>
-                        <span class="tech-item">Python/Django</span>
-                        <span class="tech-item">React/Next.js</span>
-                        <span class="tech-item">React Native</span>
-                        <span class="tech-item">MQTT</span>
-                        <span class="tech-item">Docker</span>
-                        <span class="tech-item">PostgreSQL</span>
+                </article>
+
+                <!-- Mood -->
+                <article class="card card--fluid project-card">
+                    <div class="card__body">
+                        <div class="project-card__tags">
+                            <span class="badge">Innovation</span>
+                            <span class="badge">Rapid MVP</span>
+                            <span class="badge">Exhibition Demo</span>
+                        </div>
+                        <h3 data-i18n="mood-title">Mood Tracking Interactive Application</h3>
+                        <p data-i18n="mood-description">An interactive exhibition application that captures and visualizes participant emotions in real-time, demonstrating innovative approach to user engagement and experience analytics.</p>
+
+                        <div class="project-highlights">
+                            <div class="project-highlight">
+                                <i class="fas fa-bolt"></i>
+                                <span data-i18n="mood-highlight1">2-week development cycle</span>
+                            </div>
+                            <div class="project-highlight">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="mood-highlight2">500+ exhibition visitors</span>
+                            </div>
+                            <div class="project-highlight">
+                                <i class="fas fa-chart-line"></i>
+                                <span data-i18n="mood-highlight3">Real-time analytics dashboard</span>
+                            </div>
+                        </div>
+
+                        <div class="project-details-grid">
+                            <div class="card card--soft">
+                                <h4 data-i18n="mood-challenge">Challenge</h4>
+                                <p data-i18n="mood-challenge-text">Create an engaging, lightweight app for a corporate trade show to visualize visitors emotions and showcase the power of real-time data visualization using engineering systems and multimedia.</p>
+                            </div>
+                            <div class="card card--soft">
+                                <h4 data-i18n="mood-role">My Role & Responsibilities</h4>
+                                <p data-i18n="mood-role-text"><strong>End-to-end product management:</strong></p>
+                                <ul>
+                                    <li data-i18n="mood-role1"><strong>Concept development:</strong> From idea to functional prototype</li>
+                                    <li data-i18n="mood-role2"><strong>UI/UX:</strong> Сreated the concept of mood selection interface and real-time visualization</li>
+                                    <li data-i18n="mood-role3"><strong>Development oversight:</strong> Managed frontend development team</li>
+                                    <li data-i18n="mood-role4"><strong>Exhibition deployment:</strong> Coordinated installation and technical support</li>
+                                    <li data-i18n="mood-role5"><strong>Analytics:</strong> Technical specifications for real-time mood tracking analytics and visualization</li>
+                                    <li data-i18n="mood-role6"><strong>Stakeholder presentations:</strong> Demonstrated product value to investors and clients</li>
+                                </ul>
+                            </div>
+                            <div class="card card--soft">
+                                <h4 data-i18n="mood-outcome">Outcome</h4>
+                                <p data-i18n="mood-outcome-text">A successful exhibition installation that engaged 500+ visitors, provided real-time mood analytics, demonstrated technical capabilities to potential clients, and generated leads for the main Anima platform.</p>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-stack__label" data-i18n="anima-tech">Tech Stack:</span>
+                            <span class="badge">React.js</span>
+                            <span class="badge">Chart.js</span>
+                            <span class="badge">MQTT</span>
+                        </div>
+
+                        <p>
+                            <a href="https://www.officenext.ru/orientir/article_112668_trend-rooms-2025-pobediteli/" target="_blank" rel="noopener noreferrer" class="btn btn--soft">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-i18n="mood-link1">Exhibition article</span>
+                            </a>
+                        </p>
                     </div>
-                    
-                    <div class="project-links">
-                        <a href="https://animatech.group/ekosistema-umnogo-ofisa-anima/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span data-i18n="anima-link1">View Product Website</span>
-                        </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section-block section-block--alt">
+            <div class="container">
+                <h2 class="section-heading" data-i18n="skills-title">My Toolkit & Skills</h2>
+                <p class="section-lead" data-i18n="skills-subtitle">Combination of technical expertise and a deep understanding of user experience</p>
+                <div class="skills-grid">
+                    <div class="card">
+                        <h3><i class="fas fa-project-diagram"></i> <span data-i18n="skills-methodologies">Methodologies</span></h3>
+                        <div class="skill-item">
+                            <span>Agile/Scrum</span>
+                            <div class="skill-level"><div class="skill-level__bar" style="width: 95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Kanban</span>
+                            <div class="skill-level"><div class="skill-level__bar" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Waterfall</span>
+                            <div class="skill-level"><div class="skill-level__bar" style="width: 70%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3><i class="fas fa-tools"></i> <span data-i18n="skills-tools">Tools & Technologies</span></h3>
+                        <div class="skill-tags">
+                            <span class="badge">Jira</span>
+                            <span class="badge">Confluence</span>
+                            <span class="badge">Miro</span>
+                            <span class="badge">Figma</span>
+                            <span class="badge">Git/GitHub</span>
+                            <span class="badge">Bitrix24</span>
+                            <span class="badge">Notion</span>
+                            <span class="badge">Canva</span>
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3><i class="fas fa-comments"></i> <span data-i18n="skills-languages">Languages</span></h3>
+                        <div class="language-item">
+                            <span>Russian</span>
+                            <span class="text-muted">Native</span>
+                        </div>
+                        <div class="language-item">
+                            <span>English</span>
+                            <span class="text-muted">B2 (Upper Intermediate)</span>
+                        </div>
+                        <div class="language-item">
+                            <span>Chinese</span>
+                            <span class="text-muted">B1 (Intermediate)</span>
+                        </div>
+                    </div>
+
+                    <div class="card card--full">
+                        <h3><i class="fas fa-brain"></i> <span data-i18n="skills-competencies">Core Competencies</span></h3>
+                        <div class="competency-list">
+                            <span class="badge" data-i18n="competency-1">Team Leadership & Scaling</span>
+                            <span class="badge" data-i18n="competency-2">Product Roadmapping</span>
+                            <span class="badge" data-i18n="competency-3">Stakeholder Management</span>
+                            <span class="badge" data-i18n="competency-4">UX/UI Testing</span>
+                            <span class="badge" data-i18n="competency-5">Pre-sales & Demos</span>
+                            <span class="badge" data-i18n="competency-6">Cross-team Coordination</span>
+                            <span class="badge" data-i18n="competency-7">Agile Transformation</span>
+                            <span class="badge" data-i18n="competency-8">Microservices Planning</span>
+                            <span class="badge" data-i18n="competency-9">Budget Management</span>
+                            <span class="badge" data-i18n="competency-10">Risk Assessment</span>
+                            <span class="badge" data-i18n="competency-11">Quality Assurance</span>
+                            <span class="badge" data-i18n="competency-12">Backlog management</span>
+                            <span class="badge" data-i18n="competency-13">Competitor analysis</span>
+                            <span class="badge" data-i18n="competency-14">Conducting negotiations</span>
+                            <span class="badge" data-i18n="competency-15">Customer Journey Mapping</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 2: Mood App -->
-            <div class="project-card mood-project">
-                <div class="project-tags">
-                    <span class="tag tag-innovation">Innovation</span>
-                    <span class="tag tag-mvp">Rapid MVP</span>
-                    <span class="tag tag-exhibition">Exhibition Demo</span>
-                </div>
-                <div class="project-content">
-                    <h3 data-i18n="mood-title">Mood Tracking Interactive Application</h3>
-                    <p class="project-description" data-i18n="mood-description">An interactive exhibition application that captures and visualizes participant emotions in real-time, demonstrating innovative approach to user engagement and experience analytics.</p>
-                    
-                    <div class="project-highlights">
-                        <div class="highlight">
-                            <i class="fas fa-bolt"></i>
-                            <span data-i18n="mood-highlight1">2-week development cycle</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-users"></i>
-                            <span data-i18n="mood-highlight2">500+ exhibition visitors</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-chart-line"></i>
-                            <span data-i18n="mood-highlight3">Real-time analytics dashboard</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-details">
-                        <div class="detail">
-                            <h4 data-i18n="mood-challenge">Challenge</h4>
-                            <p data-i18n="mood-challenge-text">Create an engaging, lightweight application for a corporate exhibition to demonstrate user-centric approach, collect emotional feedback from attendees, and showcase real-time data visualization capabilities.</p>
-                        </div>
-                        <div class="detail">
-                            <h4 data-i18n="mood-role">My Role & Responsibilities</h4>
-                            <p data-i18n="mood-role-text"><strong>End-to-end product management:</strong></p>
-                            <ul>
-                                <li data-i18n="mood-role1"><strong>Concept development:</strong> From idea to functional prototype</li>
-                                <li data-i18n="mood-role2"><strong>UI/UX design:</strong> Created mood selection interface and real-time visualization</li>
-                                <li data-i18n="mood-role3"><strong>Development oversight:</strong> Managed frontend development team</li>
-                                <li data-i18n="mood-role4"><strong>Exhibition deployment:</strong> Coordinated installation and technical support</li>
-                                <li data-i18n="mood-role5"><strong>Analytics implementation:</strong> Real-time mood tracking and visualization</li>
-                                <li data-i18n="mood-role6"><strong>Stakeholder presentations:</strong> Demonstrated product value to investors and clients</li>
-                            </ul>
-                        </div>
-                        <div class="detail">
-                            <h4 data-i18n="mood-outcome">Outcome</h4>
-                            <p data-i18n="mood-outcome-text">A successful exhibition installation that engaged 500+ visitors, provided real-time mood analytics, demonstrated technical capabilities to potential clients, and generated leads for the main Anima platform.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <span class="tech-label" data-i18n="anima-tech">Tech Stack:</span>
-                        <span class="tech-item">React.js</span>
-                        <span class="tech-item">Chart.js</span>
-                        <span class="tech-item">MQTT</span>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="https://www.officenext.ru/orientir/article_112668_trend-rooms-2025-pobediteli/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span data-i18n="mood-link1">View Exhibition Demo</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Contact -->
+        <section id="contact" class="section-block">
+            <div class="container">
+                <h2 class="section-heading" data-i18n="contact-title">Let's Connect</h2>
+                <p class="section-lead" data-i18n="contact-subtitle">Open to opportunities (Remote or Relocation)</p>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title" data-i18n="skills-title">My Toolkit & Skills</h2>
-            <p class="section-subtitle" data-i18n="skills-subtitle">Combining technical understanding with people leadership</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-project-diagram"></i> <span data-i18n="skills-methodologies">Methodologies</span></h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Agile/Scrum</span>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Kanban</span>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Waterfall</span>
-                            <div class="skill-level">
-                                <div class="level-bar" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> <span data-i18n="skills-tools">Tools & Technologies</span></h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Confluence</span>
-                        <span class="skill-tag">Miro</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">Bitrix24</span>
-                        <span class="skill-tag">Notion</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-comments"></i> <span data-i18n="skills-languages">Languages</span></h3>
-                    <div class="language-items">
-                        <div class="language-item">
-                            <span class="language-name">Russian</span>
-                            <span class="language-level">Native</span>
-                        </div>
-                        <div class="language-item">
-                            <span class="language-name">English</span>
-                            <span class="language-level">B2 (Upper Intermediate)</span>
-                        </div>
-                        <div class="language-item">
-                            <span class="language-name">Chinese</span>
-                            <span class="language-level">B1 (Intermediate)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category full-width">
-                    <h3><i class="fas fa-brain"></i> <span data-i18n="skills-competencies">Core Competencies</span></h3>
-                    <div class="competency-list">
-                        <div class="competency" data-i18n="competency-1">Team Leadership & Scaling</div>
-                        <div class="competency" data-i18n="competency-2">Product Roadmapping</div>
-                        <div class="competency" data-i18n="competency-3">Stakeholder Management</div>
-                        <div class="competency" data-i18n="competency-4">UX/UI Testing</div>
-                        <div class="competency" data-i18n="competency-5">Pre-sales & Demos</div>
-                        <div class="competency" data-i18n="competency-6">Cross-team Coordination</div>
-                        <div class="competency" data-i18n="competency-7">Agile Transformation</div>
-                        <div class="competency" data-i18n="competency-8">Microservices Planning</div>
-                        <div class="competency" data-i18n="competency-9">Budget Management</div>
-                        <div class="competency" data-i18n="competency-10">Risk Assessment</div>
-                        <div class="competency" data-i18n="competency-11">Quality Assurance</div>
-                        <div class="competency" data-i18n="competency-12">Backlog management</div>
-                        <div class="competency" data-i18n="competency-13">Competitor analysis</div>
-                        <div class="competency" data-i18n="competency-14">Conducting negotiations</div>
-                        <div class="competency" data-i18n="competency-15">Customer Journey Mapping</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-i18n="contact-title">Let's Connect</h2>
-            <p class="section-subtitle" data-i18n="contact-subtitle">Open to opportunities (Remote or Relocation)</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
+                <div class="card contact-card">
                     <h3 data-i18n="contact-info-title">Get in Touch</h3>
                     <p data-i18n="contact-info-text">I'm actively exploring project management opportunities where I can contribute to innovative teams and meaningful products. My experience with enterprise SaaS platforms and agile methodologies can help drive your projects to success.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4 data-i18n="contact-email">Email</h4>
-                                <a href="mailto:utiiny17@gmail.com">utiiny17@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4 data-i18n="contact-phone">Phone/WhatsApp</h4>
-                                <a href="tel:+79035005017">+7 (903) 500-50-17</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4 data-i18n="contact-location">Location & Availability</h4>
-                                <p>Moscow, Russia | Ready for relocation</p>
-                            </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-i18n="contact-email">Email</h4>
+                            <a href="mailto:utiiny17@gmail.com">utiiny17@gmail.com</a>
                         </div>
                     </div>
-                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-i18n="contact-phone">Phone/WhatsApp</h4>
+                            <a href="tel:+79035005017">+7 (903) 500-50-17</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-i18n="contact-location">Location & Availability</h4>
+                            <p>Moscow, Russia | Ready for relocation</p>
+                        </div>
+                    </div>
+
                     <div class="social-links">
-                        <a href="https://github.com/Mineralins" target="_blank" class="social-link" title="GitHub">
+                        <a href="https://github.com/Mineralins" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://t.me/mineralins" target="_blank" class="social-link" title="Telegram">
+                        <a href="https://t.me/mineralins" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram" aria-label="Telegram">
                             <i class="fab fa-telegram"></i>
                         </a>
-                        <a href="https://wa.me/79035005017" target="_blank" class="social-link" title="WhatsApp">
+                        <a href="https://wa.me/79035005017" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="availability">
-                <div class="availability-badge">
-                    <div class="pulse-dot"></div>
-                    <span data-i18n="contact-availability">Available for opportunities</span>
-                </div>
-                <p class="availability-text" data-i18n="contact-roles">Interested in roles: Project Manager, Delivery Manager in IT sector</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Ksenia Kurilova</div>
-                <p data-i18n="footer-tagline">Project Manager | Turning Vision Into Value</p>
-                <div class="footer-links">
-                    <a href="#about" data-i18n="nav-about">About</a>
-                    <a href="#projects" data-i18n="nav-projects">Projects</a>
-                    <a href="#skills" data-i18n="nav-skills">Skills</a>
-                    <a href="#contact" data-i18n="nav-contact">Contact</a>
+                <div class="availability-block">
+                    <span class="label label--success" data-i18n="contact-availability">Available for opportunities</span>
+                    <p data-i18n="contact-roles">Interested in roles: Project Manager, Delivery Manager in IT sector</p>
                 </div>
-                <p class="footer-note" data-i18n="footer-note">Resume updated: December 2025 | Experience calculated dynamically | Website built with HTML, CSS & JavaScript</p>
             </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__brand">Ksenia Kurilova</div>
+            <p data-i18n="footer-tagline">Project Manager | Turning Vision Into Value</p>
+            <div class="site-footer__links">
+                <a href="#about" data-i18n="nav-about">About</a>
+                <a href="#projects" data-i18n="nav-projects">Projects</a>
+                <a href="#skills" data-i18n="nav-skills">Skills</a>
+                <a href="#contact" data-i18n="nav-contact">Contact</a>
+            </div>
+            <p class="site-footer__note" data-i18n="footer-note">Resume updated: December 2025 | Experience calculated dynamically | Website built with HTML, CSS & JavaScript</p>
         </div>
     </footer>
 
