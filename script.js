@@ -77,53 +77,6 @@ function setLanguage(lang) {
     localStorage.setItem('language', lang);
 }
 
-function calculateExperience() {
-    const startDate = new Date('2024-06-01');
-    const now = new Date();
-    const months = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
-    return (months / 12).toFixed(1);
-}
-
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start);
-        }
-    }, 16);
-}
-
-function initCounters() {
-    const heroSection = document.querySelector('.hero');
-    if (!heroSection) return;
-
-    const experienceElement = document.getElementById('experienceYears');
-    if (experienceElement) {
-        experienceElement.textContent = calculateExperience();
-    }
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.querySelectorAll('.stat-number:not(#experienceYears)').forEach((stat) => {
-                    const target = parseInt(stat.getAttribute('data-target'), 10);
-                    if (!Number.isNaN(target)) animateCounter(stat, target);
-                });
-                observer.unobserve(entry.target);
-            });
-        },
-        { threshold: 0.5, rootMargin: '0px' }
-    );
-
-    observer.observe(heroSection);
-}
-
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
@@ -213,7 +166,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    initCounters();
     initSmoothScroll();
     initNavbarScroll();
     initMobileNav();

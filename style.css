@@ -76,7 +76,17 @@ html {
     align-items: center;
 }
 
-.hero-layout__content .label {
+.hero-layout__content .label.label--pill {
+    margin-bottom: 1rem;
+    font-size: calc(var(--text-xs, 0.75rem) * 2);
+    padding-block: calc(0.15rem * 2 + 0.1rem);
+    padding-inline: calc(0.5rem * 2 + 0.25rem);
+    color: var(--accent, #0f766e);
+    border-color: color-mix(in oklch, var(--accent) 30%, var(--line));
+    background: color-mix(in oklch, var(--accent) 10%, var(--bg));
+}
+
+.hero-layout__content .label:not(.label--pill) {
     margin-bottom: 1rem;
 }
 
@@ -116,6 +126,28 @@ html {
     color: var(--accent, #0f766e);
 }
 
+/* Primary color for headings and bold emphasis */
+main h1,
+main h2,
+main h3,
+main h4 {
+    color: var(--accent, #0f766e);
+}
+
+main strong {
+    color: var(--accent, #0f766e);
+}
+
+/* Badges — 1.5× size, extra padding, primary text */
+main .badge {
+    font-size: calc(var(--text-2xs, 0.7rem) * 1.5);
+    padding-block: 0.35rem;
+    padding-inline: 0.7rem;
+    color: var(--accent, #0f766e);
+    border-color: color-mix(in oklch, var(--accent) 25%, var(--line));
+    background: color-mix(in oklch, var(--accent) 8%, var(--bg));
+}
+
 /* Section spacing */
 .section-block {
     padding: 4rem 0;
@@ -137,16 +169,6 @@ html {
 }
 
 /* About */
-.about-quote {
-    max-width: 48rem;
-    margin: 2.5rem auto 0;
-}
-
-.about-quote p {
-    font-style: italic;
-    margin: 0;
-}
-
 .feature-grid .feature-card .feature-icon {
     width: auto;
     height: auto;
@@ -211,6 +233,7 @@ html {
     border-left: 3px solid var(--accent, #0f766e);
     border-radius: 0.25rem;
     font-size: 0.95rem;
+    margin-bottom: 1rem;
 }
 
 .project-highlights {
@@ -237,6 +260,10 @@ html {
     margin: 1.5rem 0;
 }
 
+.project-details-grid .card {
+    padding: var(--size-4, 1rem);
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -260,10 +287,26 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    align-items: stretch;
 }
 
-.skills-grid .card--full {
-    grid-column: 1 / -1;
+.skills-grid .card {
+    padding: var(--size-4, 1rem);
+    align-self: stretch;
+    height: 100%;
+}
+
+.skills-grid .card h3 {
+    margin-bottom: 1rem;
+}
+
+.competencies-block {
+    margin-top: 1.5rem;
+    padding: var(--size-4, 1rem);
+}
+
+.competencies-block h3 {
+    margin-bottom: 1rem;
 }
 
 .skill-level {
@@ -284,6 +327,10 @@ html {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+}
+
+.skill-tags .badge {
+    font-size: calc(var(--text-2xs, 0.7rem) * 1.5 * 0.8);
 }
 
 .skill-item + .skill-item {
@@ -314,12 +361,15 @@ html {
     justify-content: center;
     min-height: 2.75rem;
     text-align: center;
+    font-size: calc(var(--text-2xs, 0.7rem) * 1.5 * 0.8);
 }
 
 /* Contact */
 .contact-card {
     max-width: 40rem;
     margin: 0 auto 2rem;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .contact-item {
@@ -349,6 +399,7 @@ html {
     display: flex;
     gap: 0.75rem;
     margin-top: 1.5rem;
+    justify-content: center;
 }
 
 .social-link {
