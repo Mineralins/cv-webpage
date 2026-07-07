@@ -2,6 +2,56 @@ let languageToggle, languageText;
 let translations = {};
 
 const savedLanguage = localStorage.getItem('language') || 'en';
+const PM_ROLE_START = new Date(2024, 6, 1);
+
+function pluralRu(n, one, few, many) {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+    if (mod10 === 1 && mod100 !== 11) return one;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return few;
+    return many;
+}
+
+function getRoleTenure() {
+    const now = new Date();
+    let years = now.getFullYear() - PM_ROLE_START.getFullYear();
+    let months = now.getMonth() - PM_ROLE_START.getMonth();
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    return { years, months };
+}
+
+function formatTenure(lang, { years, months }) {
+    const parts = [];
+
+    if (lang === 'ru') {
+        if (years > 0) {
+            parts.push(`${years} ${pluralRu(years, 'год', 'года', 'лет')}`);
+        }
+        if (months > 0 || years === 0) {
+            parts.push(`${months} ${pluralRu(months, 'месяц', 'месяца', 'месяцев')}`);
+        }
+        return parts.join(' ');
+    }
+
+    if (years > 0) {
+        parts.push(`${years} year${years === 1 ? '' : 's'}`);
+    }
+    if (months > 0 || years === 0) {
+        parts.push(`${months} month${months === 1 ? '' : 's'}`);
+    }
+    return parts.join(' ');
+}
+
+function updateHeroExperience(lang) {
+    const el = document.getElementById('heroExperienceDuration');
+    if (!el) return;
+    el.textContent = formatTenure(lang, getRoleTenure());
+}
 
 async function loadTranslations() {
     try {
@@ -44,12 +94,6 @@ function applyLanguage(lang) {
             }
         } else if (element.tagName === 'LABEL') {
             element.textContent = translation;
-        } else if (element.tagName === 'H1' && key === 'hero-title') {
-            if (lang === 'ru') {
-                element.innerHTML = translation.replace('В Ценность', '<span class="highlight">В Ценность</span>');
-            } else {
-                element.innerHTML = translation.replace('Into Value', '<span class="highlight">Into Value</span>');
-            }
         } else if (key === 'about-journey-text') {
             element.textContent = '';
             if (Array.isArray(translation)) {
@@ -74,6 +118,7 @@ function setLanguage(lang) {
     document.documentElement.setAttribute('lang', lang);
     if (languageText) languageText.textContent = lang === 'ru' ? 'RU' : 'EN';
     applyLanguage(lang);
+    updateHeroExperience(lang);
     localStorage.setItem('language', lang);
 }
 
@@ -157,6 +202,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else {
             document.documentElement.setAttribute('lang', 'en');
             if (languageText) languageText.textContent = 'EN';
+            updateHeroExperience('en');
         }
 
         languageToggle.addEventListener('click', () => {
